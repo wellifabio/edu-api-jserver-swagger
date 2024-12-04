@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "nome": "Ana Silva Santos",
+      "cpf": "11122233344",
+      "email": "ana@email.com",
+      "password": "$2a$10$4BMh6YtdcXp/0gLHoIlvoO1ZTQtVuXoYm3qRMmeXtLI49veezAocK",
+      "foto": "1733330738054.png",
+      "audio": "1733331950998.mp3",
+      "id": 1
+    }
+  ],
+  "cursos": [
+    {
+      "nome": "Matemática",
+      "descricao": "Matemática do ensino médio",
+      "icone": "icone.png",
+      "id": 1
+    },
+    {
+      "nome": "Português",
+      "descricao": "Língua Portuguêsa e Literatura",
+      "icone": "icone.png",
+      "id": 2
+    }
+  ],
+  "atividades": []
+}
