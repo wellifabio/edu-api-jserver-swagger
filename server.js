@@ -15,7 +15,7 @@ const swaggerDoc = require('./swagger.json'); // Arquivo de documentação Swagg
 server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 const ip = "localhost";
-const port = 4000;
+const port = 4000;// Porta da API
 
 //Upload de imagens
 let imagem = ""
@@ -28,7 +28,7 @@ let storage = multer.diskStorage({
         cb(null, path.join(__dirname, "uploads"))
     },
     filename: (req, file, cb) => {
-        imagem = Date.now() + (path.extname(file.originalname) || ".jpg,.pdf,.png,.gld, .mp3, .mp4,.avi,.mpg")
+        imagem = Date.now() + (path.extname(file.originalname))
         cb(null, imagem)
     }
 })
@@ -54,11 +54,13 @@ server.post("/arquivos", (req, res) => {
     imagem = "";
 })
 
-// Você pode definir diferentes níveis de acesso para diferentes endpoints aqui.
+// Lista de Endpoints que exigem autenticação JWT
 const rules = auth.rewriter({
     "/users*": "/660/users$1",
     "/cursos*": "/660/cursos$1",
+    "/matriculas*": "/660/matriculas$1",
     "/atividades*": "/660/atividades$1",
+    "/entregas*": "/660/entregas$1"
 });
 
 server.use(rules);
