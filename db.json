@@ -2,27 +2,741 @@
   "users": [
     {
       "nome": "Ana Silva Santos",
-      "cpf": "11122233344",
+      "cpf": "196.061.899-70",
       "email": "ana@email.com",
       "password": "$2a$10$4BMh6YtdcXp/0gLHoIlvoO1ZTQtVuXoYm3qRMmeXtLI49veezAocK",
       "foto": "1733330738054.png",
       "audio": "1733331950998.mp3",
       "id": 1
+    },
+    {
+      "nome": "Bruno Oliveira",
+      "cpf": "977.707.958-34",
+      "email": "bruno@email.com",
+      "password": "$2a$10$4BMh6YtdcXp/0gLHoIlvoO1ZTQtVuXoYm3qRMmeXtLI49veezAocK",
+      "foto": "1733330738054.png",
+      "audio": "1733331950998.mp3",
+      "id": 2
+    },
+    {
+      "nome": "Caio Martins",
+      "cpf": "927.157.318-84",
+      "email": "caio@email.com",
+      "password": "$2a$10$4BMh6YtdcXp/0gLHoIlvoO1ZTQtVuXoYm3qRMmeXtLI49veezAocK",
+      "id": 3,
+      "foto": "1733415861485.webp"
     }
   ],
   "cursos": [
     {
       "nome": "Matemática",
       "descricao": "Matemática do ensino médio",
-      "icone": "icone.png",
+      "icone": "matematica.png",
       "id": 1
     },
     {
       "nome": "Português",
       "descricao": "Língua Portuguêsa e Literatura",
-      "icone": "icone.png",
+      "icone": "portugues.png",
       "id": 2
+    },
+    {
+      "nome": "Biologia",
+      "descricao": "Biologia do ensino médio",
+      "icone": "biologia.png",
+      "id": 3
+    },
+    {
+      "nome": "Química",
+      "descricao": "Química do ensino médio",
+      "icone": "quimica.png",
+      "id": 4
+    },
+    {
+      "nome": "Física",
+      "descricao": "Física do ensino médio",
+      "icone": "fisica.png",
+      "id": 5
+    },
+    {
+      "nome": "Geografia",
+      "descricao": "Geografia do ensino médio",
+      "icone": "geografia.png",
+      "id": 6
+    },
+    {
+      "nome": "História",
+      "descricao": "História do ensino médio",
+      "icone": "historia.png",
+      "id": 7
+    },
+    {
+      "nome": "Inglês",
+      "descricao": "Inglês técnico",
+      "icone": "ingles.png",
+      "id": 8
+    },
+    {
+      "nome": "Lógica de programação",
+      "descricao": "Lógica de programação",
+      "icone": "lop.png",
+      "id": 9
+    },
+    {
+      "nome": "Banco de Dados",
+      "descricao": "Banco de Dados relacionais e não relacionais",
+      "icone": "bcd.png",
+      "id": 10
+    },
+    {
+      "nome": "Programação Web Back-End",
+      "descricao": "Programação Web Back-End",
+      "icone": "pwbe.png",
+      "id": 11
+    },
+    {
+      "nome": "Programação Web Front-End",
+      "descricao": "Programação Web Front-End",
+      "icone": "pwfe.png",
+      "id": 12
+    },
+    {
+      "nome": "Comunicação Oral e Escrita",
+      "descricao": "Comunicação Oral e Escrita",
+      "icone": "coe.png",
+      "id": 13
+    },
+    {
+      "nome": "Design de Aplicativos Móveis",
+      "descricao": "Design de Aplicativos Móveis",
+      "icone": "mobile.png",
+      "id": 14
+    },
+    {
+      "nome": "Programação de Aplicativos Móveis",
+      "descricao": "Programação de Aplicativos Móveis",
+      "icone": "mobile.png",
+      "id": 15
+    },
+    {
+      "nome": "Introcução Iot",
+      "descricao": "Introcução a Internet das Coisa",
+      "icone": "iot.png",
+      "id": 16
     }
   ],
-  "atividades": []
+  "matriculas": [
+    {
+      "usuario": 1,
+      "curso": 1,
+      "data": "2024-12-05",
+      "id": 1,
+      "progresso": 33
+    },
+    {
+      "usuario": 1,
+      "curso": 2,
+      "data": "2024-12-05",
+      "id": 2,
+      "progresso": 0
+    },
+    {
+      "usuario": 1,
+      "curso": 3,
+      "data": "2024-12-05",
+      "id": 3,
+      "progresso": 100
+    },
+    {
+      "usuario": 1,
+      "curso": 4,
+      "data": "2024-12-05",
+      "id": 4,
+      "progresso": 100
+    },
+    {
+      "usuario": 1,
+      "curso": 5,
+      "data": "2024-12-05",
+      "id": 5,
+      "progresso": 100
+    },
+    {
+      "usuario": 1,
+      "curso": 6,
+      "data": "2024-12-05",
+      "id": 6,
+      "progresso": 77
+    },
+    {
+      "usuario": 1,
+      "curso": 7,
+      "data": "2024-12-05",
+      "id": 7,
+      "progresso": 77
+    },
+    {
+      "usuario": 1,
+      "curso": 8,
+      "data": "2024-12-05",
+      "id": 8,
+      "progresso": 77
+    },
+    {
+      "usuario": 1,
+      "curso": 9,
+      "data": "2024-12-05",
+      "id": 9,
+      "progresso": 77
+    },
+    {
+      "usuario": 1,
+      "curso": 10,
+      "data": "2024-12-05",
+      "id": 10,
+      "progresso": 0
+    },
+    {
+      "usuario": 2,
+      "curso": 1,
+      "data": "2024-12-05",
+      "id": 11,
+      "progresso": 0
+    },
+    {
+      "usuario": 2,
+      "curso": 2,
+      "data": "2024-12-05",
+      "id": 12,
+      "progresso": 0
+    },
+    {
+      "usuario": 2,
+      "curso": 3,
+      "data": "2024-12-05",
+      "id": 13,
+      "progresso": 33
+    },
+    {
+      "usuario": 2,
+      "curso": 4,
+      "data": "2024-12-05",
+      "id": 14,
+      "progresso": 33
+    },
+    {
+      "usuario": 2,
+      "curso": 5,
+      "data": "2024-12-05",
+      "id": 15,
+      "progresso": 77
+    },
+    {
+      "usuario": 2,
+      "curso": 6,
+      "data": "2024-12-05",
+      "id": 16,
+      "progresso": 77
+    },
+    {
+      "usuario": 2,
+      "curso": 7,
+      "data": "2024-12-05",
+      "id": 17,
+      "progresso": 77
+    },
+    {
+      "usuario": 2,
+      "curso": 8,
+      "data": "2024-12-05",
+      "id": 18,
+      "progresso": 77
+    },
+    {
+      "usuario": 3,
+      "curso": 1,
+      "data": "2024-12-05",
+      "id": 19,
+      "progresso": 0
+    },
+    {
+      "usuario": 3,
+      "curso": 2,
+      "data": "2024-12-05",
+      "id": 20,
+      "progresso": 0
+    },
+    {
+      "usuario": 3,
+      "curso": 3,
+      "data": "2024-12-05",
+      "id": 21,
+      "progresso": 0
+    }
+  ],
+  "atividades": [
+    {
+      "nome": "Lista de Exercícios",
+      "data": "2025-01-20",
+      "curso": 1,
+      "recursos": [
+        {
+          "nome": "Questões",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733418431067.pdf"
+        },
+        {
+          "nome": "Video explicativo",
+          "icone": "video.png",
+          "tipo": "video",
+          "recurso": "1733412847578.mp4"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nome": "Situação Problema",
+      "data": "2025-01-25",
+      "curso": 1,
+      "recursos": [
+        {
+          "nome": "Instruções",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733418431067.pdf"
+        },
+        {
+          "nome": "Imagem 3D de um cavalo",
+          "icone": "3d.png",
+          "tipo": "3d",
+          "recurso": "1733417806190.glb"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "nome": "Lista de Exercícios",
+      "data": "2025-01-22",
+      "curso": 2,
+      "recursos": [
+        {
+          "nome": "Questões",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733418431067.pdf"
+        },
+        {
+          "nome": "Video explicativo",
+          "icone": "video.png",
+          "tipo": "video",
+          "recurso": "1733412847578.mp4"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "nome": "Seminário",
+      "data": "2025-01-28",
+      "curso": 2,
+      "recursos": [
+        {
+          "nome": "Instruções",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733418431067.pdf"
+        },
+        {
+          "nome": "Video explicativo",
+          "icone": "video.png",
+          "tipo": "video",
+          "recurso": "1733412847578.mp4"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "nome": "Estudo de Caso",
+      "data": "2025-01-20",
+      "curso": 2,
+      "recursos": [
+        {
+          "nome": "Instruções",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733418431067.pdf"
+        },
+        {
+          "nome": "Fotografia do estudo",
+          "icone": "imagem.png",
+          "tipo": "imagem",
+          "recurso": "1733415861485.webp"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "nome": "Pesquisa",
+      "data": "2025-01-15",
+      "curso": 3,
+      "recursos": [
+        {
+          "nome": "Instruções",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        },
+        {
+          "nome": "Imagem para a capa",
+          "icone": "imagem.png",
+          "tipo": "imagem",
+          "recurso": "1733413300252.png"
+        },
+        {
+          "nome": "Video explicativo",
+          "icone": "video.png",
+          "tipo": "video",
+          "recurso": "1733412847578.mp4"
+        },
+        {
+          "nome": "Vaca 3d para análise",
+          "icone": "3d.png",
+          "tipo": "3d",
+          "recurso": "1733417806190.glb"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-01-23",
+      "curso": 3,
+      "recursos": [
+        {
+          "nome": "Questionário com 10 questões",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "nome": "Seminário",
+      "data": "2025-01-25",
+      "curso": 3,
+      "recursos": [
+        {
+          "nome": "Instruções",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 4,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 5,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 6,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 6,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 12
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 7,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-05",
+      "curso": 8,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 14
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-07",
+      "curso": 9,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 15
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-10",
+      "curso": 10,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-15",
+      "curso": 10,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 17
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-15",
+      "curso": 11,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-25",
+      "curso": 12,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 19
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 13,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 20
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 2,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 21
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 14,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 22
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 15,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 23
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 16,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 24
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 16,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 25
+    },
+    {
+      "nome": "Lista de exercícios",
+      "data": "2025-02-20",
+      "curso": 16,
+      "recursos": [
+        {
+          "nome": "Questionário",
+          "icone": "pdf.png",
+          "tipo": "pdf",
+          "recurso": "1733332238287.pdf"
+        }
+      ],
+      "id": 26
+    }
+  ],
+  "entregas": [
+    {
+      "usuario": 1,
+      "atividade": 1,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-08",
+      "id": 1
+    },
+    {
+      "usuario": 1,
+      "atividade": 2,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-09",
+      "id": 2
+    },
+    {
+      "usuario": 1,
+      "atividade": 3,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-10",
+      "id": 3
+    },
+    {
+      "usuario": 2,
+      "atividade": 1,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-12",
+      "id": 4
+    },
+    {
+      "usuario": 2,
+      "atividade": 2,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-12",
+      "id": 5
+    },
+    {
+      "usuario": 2,
+      "atividade": 3,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-12",
+      "id": 6
+    },
+    {
+      "usuario": 1,
+      "atividade": 4,
+      "arquivo": "1733418431067.pdf",
+      "data": "2025-01-12",
+      "id": 7
+    }
+  ]
 }
