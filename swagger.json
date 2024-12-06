@@ -42,16 +42,24 @@
       "description": "Endpoints de arquivos estáticos (imagens)"
     },
     {
-      "name": "CRUD de Usuários",
-      "description": "Endpoints de CRUD de usuarios"
+      "name": "Usuários",
+      "description": "Endpoints para cadastro e alterações de usuarios"
     },
     {
-      "name": "CRUD de Cursos",
-      "description": "Endpoints de CRUD de Cursos"
+      "name": "Cursos",
+      "description": "Endpoints para listar cursos"
     },
     {
-      "name": "CRUD de Atividades e Recursos",
+      "name": "Matriculas",
+      "description": "Endpoints para gestão de Matrículas de Usuários em Cursos"
+    },
+    {
+      "name": "Atividades e Recursos",
       "description": "Endpoints de Atividades e Recursos"
+    },
+    {
+      "name": "Entregas",
+      "description": "Endpoints com CRUD de Entregas"
     }
   ],
   "paths": {
@@ -70,11 +78,11 @@
                 "properties": {
                   "email": {
                     "type": "string",
-                    "default":"ana@email.com"
+                    "default": "ana@email.com"
                   },
                   "password": {
                     "type": "string",
-                    "default":"senai123"
+                    "default": "senai123"
                   }
                 },
                 "required": [
@@ -115,9 +123,6 @@
         "responses": {
           "200": {
             "description": "Sucesso"
-          },
-          "401": {
-            "description": "Não autorizado"
           },
           "404": {
             "description": "Não encontrado"
@@ -164,7 +169,7 @@
       "get": {
         "summary": "Obter lista de usuários",
         "tags": [
-          "CRUD de Usuários"
+          "Usuários"
         ],
         "security": [
           {
@@ -183,7 +188,7 @@
       "post": {
         "summary": "Criar novo elemento",
         "tags": [
-          "CRUD de Usuários"
+          "Usuários"
         ],
         "requestBody": {
           "description": "Dados de criação",
@@ -194,27 +199,19 @@
                 "properties": {
                   "nome": {
                     "type": "string",
-                    "default":"Ana Silva"
+                    "default": "Maria Santos"
                   },
                   "cpf": {
                     "type": "string",
-                    "default":"11122233344"
+                    "default": "361.347.054-38"
                   },
                   "email": {
                     "type": "string",
-                    "default":"ana@email.com"
+                    "default": "maria@email.com"
                   },
                   "password": {
                     "type": "string",
-                    "default":"senai123"
-                  },
-                  "foto": {
-                    "type": "string",
-                    "default": "foto.png"
-                  },
-                  "audio": {
-                    "type": "string",
-                    "default": "audio.mp3"
+                    "default": "senai123"
                   }
                 },
                 "required": [
@@ -239,9 +236,9 @@
     },
     "/users/{id}": {
       "patch": {
-        "summary": "Alterar campos do usuário: nome e/ou foto e/ou audio ...",
+        "summary": "Alterar campos do usuário: nome do arquivo de imagem e/ou audio que foi feito upload",
         "tags": [
-          "CRUD de Usuários"
+          "Usuários"
         ],
         "security": [
           {
@@ -266,22 +263,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nome": {
-                    "type": "string",
-                    "default":"Ana Silva"
-                  },
-                  "cpf": {
-                    "type": "string",
-                    "default":"11122233344"
-                  },
-                  "email": {
-                    "type": "string",
-                    "default":"ana@email.com"
-                  },
-                  "password": {
-                    "type": "string",
-                    "default":"senai123"
-                  },
                   "foto": {
                     "type": "string",
                     "default": "1733330738054.png"
@@ -308,7 +289,7 @@
       "put": {
         "summary": "Alterar todos os campos do usuário",
         "tags": [
-          "CRUD de Usuários"
+          "Usuários"
         ],
         "security": [
           {
@@ -335,19 +316,19 @@
                 "properties": {
                   "nome": {
                     "type": "string",
-                    "default":"Ana Silva"
+                    "default": "Ana Silva"
                   },
                   "cpf": {
                     "type": "string",
-                    "default":"11122233344"
+                    "default": "11122233344"
                   },
                   "email": {
                     "type": "string",
-                    "default":"ana@email.com"
+                    "default": "ana@email.com"
                   },
                   "password": {
                     "type": "string",
-                    "default":"senai123"
+                    "default": "senai123"
                   },
                   "foto": {
                     "type": "string",
@@ -365,7 +346,6 @@
                   "password",
                   "foto",
                   "audio"
-
                 ]
               }
             }
@@ -377,39 +357,6 @@
           },
           "404": {
             "description": "Dados não encontrados"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Excluir elemento",
-        "tags": [
-          "CRUD de Usuários"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "ID do usuário que deve ser removido",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Excluído com sucesso"
-          },
-          "400": {
-            "description": "Erro ao excluir"
-          },
-          "404": {
-            "description": "Id não encontrado"
           }
         }
       }
@@ -418,11 +365,22 @@
       "get": {
         "summary": "Obter lista de cursos",
         "tags": [
-          "CRUD de Cursos"
+          "Cursos"
         ],
         "security": [
           {
             "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do curso",
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -433,155 +391,37 @@
             "description": "Não autorizado"
           }
         }
-      },
-      "post": {
-        "summary": "Criar novo elemento",
-        "tags": [
-          "CRUD de Cursos"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "description": "Dados de criação",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "nome": {
-                    "type": "string",
-                    "default":"Matemática"
-                  },
-                  "descricao": {
-                    "type": "string",
-                    "default":"Matemática do ensino médio"
-                  },
-                  "icone": {
-                    "type": "string",
-                    "default":"icone.png"
-                  }
-                },
-                "required": [
-                  "nome",
-                  "descricao",
-                  "icone"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Criado com sucesso"
-          },
-          "400": {
-            "description": "Erro de envio de dados"
-          }
-        }
       }
     },
-    "/cursos/{id}": {
-      "patch": {
-        "summary": "Alterar campos do curso",
-        "tags": [
-          "CRUD de Cursos"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "ID do curso que deve ser alterado",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Dados para alteração",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "nome": {
-                    "type": "string",
-                    "default":"Português"
-                  },
-                  "descricao": {
-                    "type": "string",
-                    "default":"Língua Portuguêsa e Literatura"
-                  },
-                  "icone": {
-                    "type": "string",
-                    "default":"icone.png"
-                  }
-                },
-                "required": []
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Dados alterados com sucesso"
-          },
-          "400": {
-            "description": "Erro ao alterar dados"
-          },
-          "404": {
-            "description": "Dados não encontrados"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Excluir elemento",
-        "tags": [
-          "CRUD de Cursos"
-        ],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "description": "ID do curso que deve ser removido",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Excluído com sucesso"
-          },
-          "404": {
-            "description": "Id não encontrado"
-          }
-        }
-      }
-    },
-    "/atividades": {
+    "/matriculas": {
       "get": {
-        "summary": "Obter lista de atividades",
+        "summary": "Obter lista de matriculas",
         "tags": [
-          "CRUD de Atividades e Recursos"
+          "Matriculas"
         ],
         "security": [
           {
             "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do usuário",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "curso",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do curso",
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -594,9 +434,9 @@
         }
       },
       "post": {
-        "summary": "Criar novo elemento",
+        "summary": "Matricular usuário em um curso",
         "tags": [
-          "CRUD de Atividades e Recursos"
+          "Matriculas"
         ],
         "security": [
           {
@@ -610,47 +450,21 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nome": {
-                    "type": "string",
-                    "default":"Lista de exercícios"
-                  },
-                  "icone": {
-                    "type": "string",
-                    "default":"icone.png"
-                  },
-                  "data": {
-                    "type": "string",
-                    "format": "date"
+                  "usuario": {
+                    "type": "integer",
+                    "default": 1
                   },
                   "curso": {
                     "type": "integer",
                     "default": 1
                   },
-                  "recursos": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties":{
-                        "nome":{
-                          "type":"string",
-                          "default":"Imagem para a capa"
-                        },
-                        "icone":{
-                          "type":"string",
-                          "default":"icone.png"
-                        },
-                        "tipo":{
-                          "type":"string",
-                          "default":"imagem"
-                        }
-                      }
-                    }
+                  "data": {
+                    "type": "string",
+                    "format": "date"
                   }
                 },
                 "required": [
-                  "nome",
-                  "icone",
-                  "data",
+                  "usuario",
                   "curso"
                 ]
               }
@@ -667,11 +481,11 @@
         }
       }
     },
-    "/atividades/{id}": {
+    "/matriculas/{id}": {
       "patch": {
-        "summary": "Alterar campos da Atividade: nome, ícone, data, acrescentar ou remover recursos",
+        "summary": "Alterar progresso do curso",
         "tags": [
-          "CRUD de Atividades e Recursos"
+          "Matriculas"
         ],
         "security": [
           {
@@ -683,7 +497,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "description": "ID da atividade que deve ser alterada",
+            "description": "ID da matrícula cujo progresso deve ser alterado",
             "schema": {
               "type": "integer"
             }
@@ -696,41 +510,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nome": {
-                    "type": "string",
-                    "default":"Lista de exercícios"
-                  },
-                  "icone": {
-                    "type": "string",
-                    "default":"icone.png"
-                  },
-                  "data": {
-                    "type": "string",
-                    "format": "date"
-                  },
-                  "curso": {
+                  "progresso": {
                     "type": "integer",
-                    "default": 1
-                  },
-                  "recursos": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties":{
-                        "nome":{
-                          "type":"string",
-                          "default":"Imagem para a capa"
-                        },
-                        "icone":{
-                          "type":"string",
-                          "default":"icone.png"
-                        },
-                        "tipo":{
-                          "type":"string",
-                          "default":"imagem"
-                        }
-                      }
-                    }
+                    "default": 33
                   }
                 },
                 "required": []
@@ -742,18 +524,15 @@
           "200": {
             "description": "Dados alterados com sucesso"
           },
-          "400": {
-            "description": "Erro ao alterar dados"
-          },
           "404": {
             "description": "Dados não encontrados"
           }
         }
       },
       "delete": {
-        "summary": "Excluir elemento: Atividade e todos os recursos atrelados",
+        "summary": "Excluir/Cancelar Matrícula",
         "tags": [
-          "CRUD de Atividades e Recursos"
+          "Matriculas"
         ],
         "security": [
           {
@@ -765,7 +544,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "description": "ID da atividade que deve ser removida",
+            "description": "ID da matrícula a ser removida",
             "schema": {
               "type": "integer"
             }
@@ -773,10 +552,162 @@
         ],
         "responses": {
           "200": {
-            "description": "Excluído com sucesso"
+            "description": "Excluída com sucesso"
           },
           "404": {
             "description": "Id não encontrado"
+          }
+        }
+      }
+    },
+    "/atividades": {
+      "get": {
+        "summary": "Obter lista de atividades",
+        "tags": [
+          "Atividades e Recursos"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar a atividade pelo Id",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "curso",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar atividades pelo Id do curso",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar atividades pela Data",
+            "schema": {
+              "type": "string",
+              "format":"date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      }
+    },
+    "/entregas":{
+      "get": {
+        "summary": "Obter lista de entregas",
+        "tags": [
+          "Entregas"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id da entrega",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "atividade",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id da atividade",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "usuario",
+            "in": "query",
+            "required": false,
+            "description": "Filtrar por Id do usuário",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        }
+      },
+      "post": {
+        "summary": "Entrega da atividade pelo usuário",
+        "tags": [
+          "Entregas"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Dados de criação",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usuario": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "atividade": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "arquivo": {
+                    "type": "string",
+                    "default": "1733418431067.pdf"
+                  },
+                  "data": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "usuario",
+                  "atividade"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de envio de dados"
           }
         }
       }
