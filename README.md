@@ -1,4 +1,4 @@
-<h1 align="center">AGROTECH</h1>
+<h1 align="center">EDUTECH</h1>
 
 <p align="center">🚀 Projeto que utiliza o json-server para mockar uma REST API e Swagger para documentar, também cria um diretório para upload de imagem e utiliza autenticação JWT</p><br>
 
